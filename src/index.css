@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-body: "Lora", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+
+  --color-peak-gold: #D4AF37;
+  --color-midnight: #0B1A2F;
+  --color-cloud: #E8F0FE;
+  --color-charcoal: #1E1E1E;
+  --color-off-white: #F9F9F9;
+}
+
+@layer base {
+  body {
+    @apply bg-charcoal text-off-white font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.glass-morphism {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5E0A3 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.peak-button {
+  @apply relative overflow-hidden px-8 py-3 bg-peak-gold text-midnight font-display font-bold uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-peak-gold active:scale-95;
+}
+
+.nav-link {
+  @apply font-display text-xs uppercase tracking-[0.2em] text-off-white/70 hover:text-peak-gold transition-colors duration-300;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-charcoal;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-peak-gold/30 rounded-full hover:bg-peak-gold/50 transition-colors;
+}
+
